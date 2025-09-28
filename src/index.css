@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Small custom styles */
+body { 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+  @apply font-sans bg-gradient-to-br from-blue-100 via-cyan-100 to-violet-200;
+}
