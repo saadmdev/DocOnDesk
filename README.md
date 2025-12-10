@@ -2,6 +2,10 @@
 
 DocOnDesk is a modern, responsive medical web application that connects patients with trusted doctors, specialists, and emergency services. The platform is designed to make healthcare accessible, efficient, and user-friendly for everyone.
 
+### 🌐 Live Overview
+
+[![View Live](https://img.shields.io/badge/View%20Live-%231DA1F2?style=for-the-badge&logo=github&logoColor=white)](https://saadmdev.github.io/DocOnDesk/)
+
 ## Features
 
 - **Find and Book Doctors:** Search and book appointments with doctors across multiple specialties.
