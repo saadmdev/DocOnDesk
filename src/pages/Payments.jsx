@@ -25,8 +25,8 @@ export default function Payments() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8 mt-10 mb-10">
-      <h2 className="text-3xl font-bold text-indigo-700 mb-6">Payment Methods</h2>
+    <div className="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 mt-6 mb-10 border-2 border-hospital-blue/20">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-hospital-blue mb-8 text-center">Payment Methods</h2>
       <form onSubmit={handleSave} className="space-y-6">
         {/* Payment Method Selection */}
         <div>
@@ -34,7 +34,7 @@ export default function Payments() {
           <div className="grid grid-cols-3 gap-4">
             <button
               type="button"
-              className={`flex flex-col items-center border rounded-lg p-3 transition ${method === "visa" ? "border-indigo-600 bg-indigo-50" : "border-gray-200 bg-white"}`}
+              className={`flex flex-col items-center border-2 rounded-lg p-4 transition-all duration-200 ${method === "visa" ? "border-hospital-orange bg-hospital-cream shadow-lg" : "border-gray-300 bg-white hover:border-hospital-blue"}`}
               onClick={() => setMethod("visa")}
             >
               <FaCcVisa className="text-3xl text-blue-700" />
@@ -42,7 +42,7 @@ export default function Payments() {
             </button>
             <button
               type="button"
-              className={`flex flex-col items-center border rounded-lg p-3 transition ${method === "master" ? "border-indigo-600 bg-indigo-50" : "border-gray-200 bg-white"}`}
+              className={`flex flex-col items-center border-2 rounded-lg p-4 transition-all duration-200 ${method === "master" ? "border-hospital-orange bg-hospital-cream shadow-lg" : "border-gray-300 bg-white hover:border-hospital-blue"}`}
               onClick={() => setMethod("master")}
             >
               <FaCcMastercard className="text-3xl text-red-600" />
@@ -50,7 +50,7 @@ export default function Payments() {
             </button>
             <button
               type="button"
-              className={`flex flex-col items-center border rounded-lg p-3 transition ${method === "paypal" ? "border-indigo-600 bg-indigo-50" : "border-gray-200 bg-white"}`}
+              className={`flex flex-col items-center border-2 rounded-lg p-4 transition-all duration-200 ${method === "paypal" ? "border-hospital-orange bg-hospital-cream shadow-lg" : "border-gray-300 bg-white hover:border-hospital-blue"}`}
               onClick={() => setMethod("paypal")}
             >
               <FaPaypal className="text-3xl text-blue-500" />
@@ -58,7 +58,7 @@ export default function Payments() {
             </button>
             <button
               type="button"
-              className={`flex flex-col items-center border rounded-lg p-3 transition ${method === "easypaisa" ? "border-indigo-600 bg-indigo-50" : "border-gray-200 bg-white"}`}
+              className={`flex flex-col items-center border-2 rounded-lg p-4 transition-all duration-200 ${method === "easypaisa" ? "border-hospital-orange bg-hospital-cream shadow-lg" : "border-gray-300 bg-white hover:border-hospital-blue"}`}
               onClick={() => setMethod("easypaisa")}
             >
               <FaMobileAlt className="text-3xl text-green-600" />
@@ -66,7 +66,7 @@ export default function Payments() {
             </button>
             <button
               type="button"
-              className={`flex flex-col items-center border rounded-lg p-3 transition ${method === "jazzcash" ? "border-indigo-600 bg-indigo-50" : "border-gray-200 bg-white"}`}
+              className={`flex flex-col items-center border-2 rounded-lg p-4 transition-all duration-200 ${method === "jazzcash" ? "border-hospital-orange bg-hospital-cream shadow-lg" : "border-gray-300 bg-white hover:border-hospital-blue"}`}
               onClick={() => setMethod("jazzcash")}
             >
               <FaMobileAlt className="text-3xl text-yellow-600" />
@@ -74,7 +74,7 @@ export default function Payments() {
             </button>
             <button
               type="button"
-              className={`flex flex-col items-center border rounded-lg p-3 transition ${method === "credit" ? "border-indigo-600 bg-indigo-50" : "border-gray-200 bg-white"}`}
+              className={`flex flex-col items-center border-2 rounded-lg p-4 transition-all duration-200 ${method === "credit" ? "border-hospital-orange bg-hospital-cream shadow-lg" : "border-gray-300 bg-white hover:border-hospital-blue"}`}
               onClick={() => setMethod("credit")}
             >
               <FaCreditCard className="text-3xl text-indigo-600" />
@@ -89,7 +89,7 @@ export default function Payments() {
             <div>
               <label className="block font-semibold text-gray-700 mb-1">Card Number</label>
               <input
-                className="w-full border rounded px-4 py-2 focus:ring-2 focus:ring-indigo-400"
+                className="w-full border-2 border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-hospital-cream focus:border-hospital-blue transition text-gray-800"
                 value={cardNumber}
                 onChange={e => setCardNumber(e.target.value.replace(/\D/g, "").slice(0, 16))}
                 placeholder="XXXX XXXX XXXX XXXX"
@@ -167,7 +167,7 @@ export default function Payments() {
         <div className="pt-2">
           <button
             type="submit"
-            className={`w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition text-lg ${saving ? "opacity-60 cursor-not-allowed" : ""}`}
+            className={`w-full py-3.5 bg-hospital-orange hover:bg-[#B84200] text-white rounded-lg font-bold transition-all duration-200 text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] ${saving ? "opacity-60 cursor-not-allowed" : ""}`}
             disabled={saving}
           >
             {saving ? "Saving..." : "Add Payment Method"}

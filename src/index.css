@@ -6,5 +6,7 @@
 body { 
   -webkit-font-smoothing: antialiased; 
   -moz-osx-font-smoothing: grayscale; 
-  @apply font-sans bg-gradient-to-br from-blue-100 via-cyan-100 to-violet-200;
+  @apply font-sans;
+  background: linear-gradient(135deg, #FCF6D9 0%, #9CC6DB 100%);
+  min-height: 100vh;
 }

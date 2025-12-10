@@ -1,3 +1,15 @@
+import doc1 from '../assets/doc1.jpg'
+import doc2 from '../assets/doc2.jpg'
+import doc3 from '../assets/doc3.jpg'
+import doc4 from '../assets/doc4.jpg'
+import doc5 from '../assets/doc5.jpg'
+import doc6 from '../assets/doc6.jpg'
+import doc7 from '../assets/doc7.jpeg'
+
+// Doctor images arrays separated by gender
+const femaleDoctorImages = [doc1, doc7] // Female doctors: doc1, doc7
+const maleDoctorImages = [doc2, doc3, doc4, doc5, doc6] // Male doctors: doc2-doc6
+
 export const doctors = [
   // Dermatologist
   {
@@ -16,7 +28,8 @@ export const doctors = [
     rating: 4.8,
     reviews: 210,
     online: true,
-    discount: false
+    discount: false,
+    image: femaleDoctorImages[0] // doc1 (female)
   },
   {
     id: '2',
@@ -34,7 +47,8 @@ export const doctors = [
     rating: 4.9,
     reviews: 180,
     online: false,
-    discount: true
+    discount: true,
+    image: maleDoctorImages[0] // doc2 (male)
   },
   // Cardiologist
   {
@@ -53,12 +67,13 @@ export const doctors = [
     rating: 4.9,
     reviews: 220,
     online: true,
-    discount: false
+    discount: false,
+    image: maleDoctorImages[1] // doc3 (male)
   },
   {
     id: '19',
-    name: 'Dr. Rabia Shahid',
-    gender: 'female',
+    name: 'Dr. Shahid Khan',
+    gender: 'male',
     specialty: 'Cardiologist',
     experience: '12 Years',
     bio: 'Expert in arrhythmia and cardiac imaging.',
@@ -71,7 +86,8 @@ export const doctors = [
     rating: 4.8,
     reviews: 150,
     online: false,
-    discount: true
+    discount: true,
+    image: maleDoctorImages[2] // doc4 (male)
   },
   // Gynecologist
   {
@@ -90,7 +106,8 @@ export const doctors = [
     rating: 5.0,
     reviews: 95,
     online: true,
-    discount: false
+    discount: false,
+    image: femaleDoctorImages[1] // doc7 (female)
   },
   {
     id: '4',
@@ -108,7 +125,8 @@ export const doctors = [
     rating: 4.7,
     reviews: 60,
     online: false,
-    discount: true
+    discount: true,
+    image: femaleDoctorImages[0] // doc1 (female, round-robin)
   },
   // Urologist
   {
@@ -127,7 +145,8 @@ export const doctors = [
     rating: 4.6,
     reviews: 70,
     online: true,
-    discount: false
+    discount: false,
+    image: maleDoctorImages[3] // doc5 (male)
   },
   // Gastroenterologist
   {
@@ -146,7 +165,8 @@ export const doctors = [
     rating: 4.8,
     reviews: 120,
     online: false,
-    discount: false
+    discount: false,
+    image: maleDoctorImages[4] // doc6 (male)
   },
   // Dentist
   {
@@ -165,7 +185,8 @@ export const doctors = [
     rating: 4.9,
     reviews: 140,
     online: true,
-    discount: false
+    discount: false,
+    image: femaleDoctorImages[1] // doc7 (female, round-robin)
   },
   // Obesity Specialist
   {
@@ -184,7 +205,8 @@ export const doctors = [
     rating: 4.7,
     reviews: 80,
     online: false,
-    discount: true
+    discount: true,
+    image: maleDoctorImages[0] // doc2 (male, round-robin)
   },
   // ENT Specialist
   {
@@ -203,7 +225,8 @@ export const doctors = [
     rating: 4.8,
     reviews: 110,
     online: true,
-    discount: false
+    discount: false,
+    image: maleDoctorImages[1] // doc3 (male, round-robin)
   },
   // Orthopedic Surgeon
   {
@@ -222,7 +245,8 @@ export const doctors = [
     rating: 4.9,
     reviews: 90,
     online: false,
-    discount: false
+    discount: false,
+    image: maleDoctorImages[2] // doc4 (male, round-robin)
   },
   // Nephrologist
   {
@@ -241,7 +265,8 @@ export const doctors = [
     rating: 4.8,
     reviews: 100,
     online: true,
-    discount: false
+    discount: false,
+    image: maleDoctorImages[3] // doc5 (male, round-robin)
   },
   // Neurologist
   {
@@ -260,7 +285,8 @@ export const doctors = [
     rating: 4.9,
     reviews: 130,
     online: false,
-    discount: false
+    discount: false,
+    image: maleDoctorImages[4] // doc6 (male, round-robin)
   },
   // Child Specialist
   {
@@ -279,7 +305,8 @@ export const doctors = [
     rating: 4.9,
     reviews: 596,
     online: false,
-    discount: false
+    discount: false,
+    image: femaleDoctorImages[0] // doc1 (female, round-robin)
   },
   {
     id: '14',
@@ -297,7 +324,8 @@ export const doctors = [
     rating: 5.0,
     reviews: 4,
     online: false,
-    discount: true
+    discount: true,
+    image: femaleDoctorImages[1] // doc7 (female, round-robin)
   },
   // Pulmonologist
   {
@@ -316,7 +344,8 @@ export const doctors = [
     rating: 4.7,
     reviews: 70,
     online: true,
-    discount: false
+    discount: false,
+    image: maleDoctorImages[0] // doc2 (male, round-robin)
   },
   // Eye Specialist
   {
@@ -335,7 +364,8 @@ export const doctors = [
     rating: 4.8,
     reviews: 100,
     online: false,
-    discount: true
+    discount: true,
+    image: femaleDoctorImages[0] // doc1 (female, round-robin)
   },
   // General Physician
   {
@@ -354,7 +384,8 @@ export const doctors = [
     rating: 4.9,
     reviews: 200,
     online: true,
-    discount: false
+    discount: false,
+    image: maleDoctorImages[1] // doc3 (male, round-robin)
   },
   // Oncologist
   {
@@ -373,6 +404,7 @@ export const doctors = [
     rating: 4.9,
     reviews: 90,
     online: false,
-    discount: false
+    discount: false,
+    image: femaleDoctorImages[1] // doc7 (female, round-robin)
   }
 ]

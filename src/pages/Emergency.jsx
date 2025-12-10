@@ -76,26 +76,22 @@ export default function Emergency() {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-50 via-white to-indigo-50 px-2"
-      style={{
-        backgroundImage: "url('')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
+      className="min-h-screen flex items-center justify-center px-4 py-8"
+      style={{ background: 'linear-gradient(135deg, #FCF6D9 0%, #9CC6DB 100%)' }}
     >
-      <div className="max-w-3xl w-full bg-white p-10 rounded-3xl shadow-2xl text-center flex flex-col items-center">
+      <div className="max-w-4xl w-full bg-white p-6 sm:p-10 lg:p-12 rounded-3xl shadow-2xl text-center flex flex-col items-center border-2 border-hospital-orange/20">
         <div className="mb-8">
-          <h2 className="text-4xl font-extrabold text-red-600 mb-2">Emergency Ambulance Service</h2>
-          <p className="text-xl text-gray-700 mb-2">
-            <span className="font-semibold text-red-500">Every second matters in an emergency.</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-hospital-orange mb-4">Emergency Ambulance Service</h2>
+          <p className="text-lg sm:text-xl text-gray-800 mb-3 font-bold">
+            <span className="text-hospital-orange">Every second matters in an emergency.</span>
           </p>
-          <p className="text-gray-600 mb-2">
+          <p className="text-gray-700 mb-3 text-base sm:text-lg leading-relaxed">
             If you or someone near you needs urgent medical help, request an ambulance instantly. Our system will connect you to the nearest available ambulance as quickly as possible.
           </p>
-          <p className="text-gray-500 mb-2">
-            <span className="font-semibold text-indigo-600">How it works:</span> We use your current location to find the closest ambulance and dispatch it to you. Please stay at your location and keep your phone nearby for updates.
+          <p className="text-gray-600 mb-4 text-sm sm:text-base">
+            <span className="font-bold text-hospital-blue">How it works:</span> We use your current location to find the closest ambulance and dispatch it to you. Please stay at your location and keep your phone nearby for updates.
           </p>
-          <ul className="text-left text-gray-600 mb-4 mx-auto max-w-xl list-disc pl-6">
+          <ul className="text-left text-gray-700 mb-6 mx-auto max-w-2xl list-disc pl-6 sm:pl-8 space-y-2 text-sm sm:text-base bg-hospital-cream/50 rounded-xl p-4 sm:p-6">
             <li>Fastest ambulance dispatch based on your location</li>
             <li>Real-time progress and estimated arrival</li>
             <li>24/7 emergency support</li>
@@ -112,7 +108,7 @@ export default function Emergency() {
         {(status === 'idle' || status === 'fetching') && !showTerms && (
           <button
             onClick={handleEmergency}
-            className="px-10 py-4 bg-red-600 hover:bg-red-700 text-white rounded-full font-bold text-xl shadow transition mb-2"
+            className="px-8 sm:px-10 py-4 bg-hospital-orange hover:bg-[#B84200] text-white rounded-full font-bold text-lg sm:text-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 mb-2 animate-pulse"
             disabled={status === 'fetching'}
           >
             {status === 'fetching' ? 'Locating you...' : 'Request Ambulance Now'}
@@ -121,40 +117,40 @@ export default function Emergency() {
 
         {/* Terms Modal */}
         {showTerms && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
-            <div className="bg-white rounded-2xl shadow-xl p-8 max-w-lg w-full text-left">
-              <h3 className="text-xl font-bold text-red-600 mb-2">Important Notice</h3>
-              <p className="text-gray-700 mb-3">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
+            <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 max-w-lg w-full text-left border-2 border-hospital-orange/20">
+              <h3 className="text-xl sm:text-2xl font-bold text-hospital-orange mb-3">Important Notice</h3>
+              <p className="text-gray-700 mb-4 text-sm sm:text-base">
                 By requesting an ambulance, you agree to the following terms:
               </p>
-              <ul className="list-disc pl-6 text-gray-600 mb-3">
+              <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2 text-sm sm:text-base">
                 <li>This service is for genuine medical emergencies only.</li>
                 <li>Misuse, prank calls, or false requests will result in a penalty fine and possible legal action.</li>
                 <li>Your location and request details may be shared with emergency services for your safety.</li>
                 <li>All requests are logged and monitored.</li>
               </ul>
-              <div className="flex items-center mb-4">
+              <div className="flex items-center mb-6">
                 <input
                   type="checkbox"
                   id="agree"
                   checked={agreed}
                   onChange={e => setAgreed(e.target.checked)}
-                  className="mr-2"
+                  className="mr-3 w-5 h-5 accent-hospital-orange"
                 />
-                <label htmlFor="agree" className="text-gray-700 text-sm">
+                <label htmlFor="agree" className="text-gray-700 text-sm sm:text-base">
                   I have read and agree to the terms and consequences of misuse.
                 </label>
               </div>
               <div className="flex gap-3">
                 <button
                   onClick={() => setShowTerms(false)}
-                  className="px-5 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold"
+                  className="px-5 py-2.5 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={confirmEmergency}
-                  className={`px-5 py-2 rounded bg-red-600 text-white font-semibold shadow ${!agreed ? 'opacity-50 cursor-not-allowed' : 'hover:bg-red-700'}`}
+                  className={`px-5 py-2.5 rounded-lg bg-hospital-orange text-white font-semibold shadow-lg ${!agreed ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#B84200] hover:shadow-xl transition-all'}`}
                   disabled={!agreed}
                 >
                   Confirm & Request Ambulance
@@ -171,30 +167,30 @@ export default function Emergency() {
               {status === 'finding' && (
                 <>
                   <div className="flex flex-col items-center">
-                    <svg className="animate-spin mb-2" width="36" height="36" viewBox="0 0 24 24" fill="none">
-                      <circle cx="12" cy="12" r="10" stroke="#ef4444" strokeWidth="4" opacity="0.2"/>
-                      <path d="M22 12a10 10 0 0 1-10 10" stroke="#ef4444" strokeWidth="4" strokeLinecap="round"/>
+                    <svg className="animate-spin mb-3" width="40" height="40" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10" stroke="#CF4B00" strokeWidth="4" opacity="0.2"/>
+                      <path d="M22 12a10 10 0 0 1-10 10" stroke="#CF4B00" strokeWidth="4" strokeLinecap="round"/>
                     </svg>
-                    <span className="text-lg font-semibold text-red-600">Finding the nearest ambulance...</span>
+                    <span className="text-lg sm:text-xl font-bold text-hospital-orange">Finding the nearest ambulance...</span>
                   </div>
-                  <div className="mt-2 text-gray-500 text-sm">Please stay calm. Help is on the way.</div>
+                  <div className="mt-3 text-gray-600 text-sm sm:text-base">Please stay calm. Help is on the way.</div>
                 </>
               )}
               {status === 'dispatched' && (
                 <>
                   <div className="flex flex-col items-center">
-                    <svg width="40" height="40" fill="none" viewBox="0 0 24 24">
-                      <rect x="2" y="13" width="20" height="7" rx="2" fill="#6366f1"/>
-                      <rect x="16" y="8" width="6" height="7" rx="1.5" fill="#ef4444"/>
-                      <rect x="4" y="8" width="12" height="5" rx="1.5" fill="#fbbf24"/>
+                    <svg width="50" height="50" fill="none" viewBox="0 0 24 24">
+                      <rect x="2" y="13" width="20" height="7" rx="2" fill="#9CC6DB"/>
+                      <rect x="16" y="8" width="6" height="7" rx="1.5" fill="#CF4B00"/>
+                      <rect x="4" y="8" width="12" height="5" rx="1.5" fill="#DDBA7D"/>
                       <circle cx="6.5" cy="20" r="2" fill="#fff"/>
                       <circle cx="17.5" cy="20" r="2" fill="#fff"/>
                     </svg>
-                    <span className="text-lg font-bold text-indigo-700 mt-2">
+                    <span className="text-lg sm:text-xl font-bold text-hospital-blue mt-3">
                       Ambulance found! Help is on its way.
                     </span>
                   </div>
-                  <div className="mt-2 text-gray-500 text-sm">
+                  <div className="mt-3 text-gray-600 text-sm sm:text-base">
                     Stay at your location and keep your phone nearby for updates.
                   </div>
                 </>
@@ -215,9 +211,9 @@ export default function Emergency() {
             <div className="mb-2">
               <strong>Progress:</strong>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+            <div className="w-full bg-gray-200 rounded-full h-5 overflow-hidden shadow-inner">
               <div
-                className={`h-4 ${status === 'dispatched' ? 'bg-indigo-500' : 'bg-red-500'} transition-all`}
+                className={`h-5 ${status === 'dispatched' ? 'bg-hospital-blue' : 'bg-hospital-orange'} transition-all rounded-full`}
                 style={{ width: progress + '%' }}
               />
             </div>

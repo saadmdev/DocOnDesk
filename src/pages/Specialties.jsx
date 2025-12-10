@@ -34,27 +34,27 @@ export default function Specialties() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
-      <h2 className="text-3xl font-extrabold mb-8 text-teal-700 text-center">
-        {selected ? `Browse ${selected} Specialists` : "Consult best doctors online"}
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-8 sm:mb-12 text-hospital-blue text-center">
+        {selected ? `Browse ${selected} Specialists` : "Consult Best Doctors Online"}
       </h2>
 
       {!selected && (
         <div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 mb-12">
             {specialties.map((s) => {
               const Icon = s.icon;
               return (
                 <button
                   key={s.key}
                   onClick={() => handleSelect(s.key)}
-                  className="bg-white rounded-xl shadow hover:shadow-lg transition p-6 flex flex-col items-center border"
+                  className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center border-2 border-hospital-blue/10 hover:border-hospital-orange transform hover:scale-105"
                 >
-                  <Icon className="text-5xl text-teal-700 mb-3" />
-                  <div className="font-bold text-lg text-gray-600 mb-1">
+                  <Icon className="text-4xl sm:text-5xl text-hospital-blue mb-3" />
+                  <div className="font-bold text-base sm:text-lg text-gray-800 mb-2">
                     {s.name}
                   </div>
-                  <div className="text-gray-500 text-sm text-center">
+                  <div className="text-gray-600 text-xs sm:text-sm text-center leading-relaxed">
                     {s.description}
                   </div>
                 </button>
@@ -68,7 +68,7 @@ export default function Specialties() {
         <>
           <button
             onClick={handleBack}
-            className="mb-6 text-indigo-600 hover:underline text-sm"
+            className="mb-6 px-4 py-2 bg-hospital-cream hover:bg-hospital-gold text-hospital-blue font-bold rounded-lg transition-all duration-200 transform hover:scale-105"
           >
             ← Back to Specialties
           </button>

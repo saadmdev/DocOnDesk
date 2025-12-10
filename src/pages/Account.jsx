@@ -31,8 +31,8 @@ export default function Account() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto bg-white/90 rounded-2xl shadow-lg p-4 sm:p-8 mt-6 mb-10 w-full">
-      <h2 className="text-2xl sm:text-3xl font-bold text-indigo-700 mb-6 text-center">Account Details</h2>
+    <div className="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl p-4 sm:p-8 lg:p-10 mt-6 mb-10 w-full border-2 border-hospital-blue/20">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-hospital-blue mb-8 text-center">Account Details</h2>
       <form onSubmit={handleSave} className="space-y-6">
         {/* Profile Picture */}
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
@@ -44,12 +44,12 @@ export default function Account() {
                 "https://i.pravatar.cc/150?img=47"
               }
               alt="Profile"
-              className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border-4 border-indigo-200"
+              className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border-4 border-hospital-blue"
             />
             <button
               type="button"
               onClick={() => fileInput.current.click()}
-              className="absolute bottom-0 right-0 bg-indigo-600 text-white rounded-full p-2 shadow hover:bg-indigo-700 transition"
+              className="absolute bottom-0 right-0 bg-hospital-orange text-white rounded-full p-2 shadow-lg hover:bg-[#B84200] transition-all duration-200 transform hover:scale-110"
               title="Change photo"
             >
               <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
@@ -67,16 +67,16 @@ export default function Account() {
             />
           </div>
           <div className="text-center sm:text-left">
-            <div className="font-semibold text-lg text-indigo-800">{name}</div>
-            <div className="text-gray-500 text-sm break-all">{email}</div>
+            <div className="font-bold text-lg sm:text-xl text-hospital-blue">{name}</div>
+            <div className="text-gray-600 text-sm break-all">{email}</div>
           </div>
         </div>
 
         {/* Name */}
         <div>
-          <label className="block font-semibold text-gray-700 mb-1">Full Name</label>
+          <label className="block font-bold text-gray-700 mb-2 text-sm sm:text-base">Full Name</label>
           <input
-            className="w-full border rounded px-4 py-2 focus:ring-2 focus:ring-indigo-400"
+            className="w-full border-2 border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-hospital-cream focus:border-hospital-blue transition text-gray-800"
             value={name}
             onChange={e => setName(e.target.value)}
             required
@@ -85,9 +85,9 @@ export default function Account() {
 
         {/* Email */}
         <div>
-          <label className="block font-semibold text-gray-700 mb-1">Email</label>
+          <label className="block font-bold text-gray-700 mb-2 text-sm sm:text-base">Email</label>
           <input
-            className="w-full border rounded px-4 py-2 focus:ring-2 focus:ring-indigo-400"
+            className="w-full border-2 border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-hospital-cream focus:border-hospital-blue transition text-gray-800"
             value={email}
             onChange={e => setEmail(e.target.value)}
             type="email"
@@ -97,9 +97,9 @@ export default function Account() {
 
         {/* CNIC */}
         <div>
-          <label className="block font-semibold text-gray-700 mb-1">CNIC Number</label>
+          <label className="block font-bold text-gray-700 mb-2 text-sm sm:text-base">CNIC Number</label>
           <input
-            className="w-full border rounded px-4 py-2 focus:ring-2 focus:ring-indigo-400"
+            className="w-full border-2 border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-hospital-cream focus:border-hospital-blue transition text-gray-800"
             value={cnic}
             onChange={e => {
               // Only allow numbers, max 13 digits
@@ -115,9 +115,9 @@ export default function Account() {
 
         {/* Date of Birth */}
         <div>
-          <label className="block font-semibold text-gray-700 mb-1">Date of Birth</label>
+          <label className="block font-bold text-gray-700 mb-2 text-sm sm:text-base">Date of Birth</label>
           <input
-            className="w-full border rounded px-4 py-2 focus:ring-2 focus:ring-indigo-400"
+            className="w-full border-2 border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-hospital-cream focus:border-hospital-blue transition text-gray-800"
             value={dob}
             onChange={e => setDob(e.target.value)}
             type="date"
@@ -127,9 +127,9 @@ export default function Account() {
 
         {/* Mother's Name */}
         <div>
-          <label className="block font-semibold text-gray-700 mb-1">Mother's Name</label>
+          <label className="block font-bold text-gray-700 mb-2 text-sm sm:text-base">Mother's Name</label>
           <input
-            className="w-full border rounded px-4 py-2 focus:ring-2 focus:ring-indigo-400"
+            className="w-full border-2 border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-hospital-cream focus:border-hospital-blue transition text-gray-800"
             value={motherName}
             onChange={e => setMotherName(e.target.value)}
             required
@@ -138,9 +138,9 @@ export default function Account() {
 
         {/* Phone */}
         <div>
-          <label className="block font-semibold text-gray-700 mb-1">Phone Number</label>
+          <label className="block font-bold text-gray-700 mb-2 text-sm sm:text-base">Phone Number</label>
           <input
-            className="w-full border rounded px-4 py-2 focus:ring-2 focus:ring-indigo-400"
+            className="w-full border-2 border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-hospital-cream focus:border-hospital-blue transition text-gray-800"
             value={phone}
             onChange={e => setPhone(e.target.value)}
             type="tel"
@@ -152,7 +152,7 @@ export default function Account() {
         <div className="pt-2">
           <button
             type="submit"
-            className={`w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition text-lg ${saving ? "opacity-60 cursor-not-allowed" : ""}`}
+            className={`w-full py-3.5 bg-hospital-orange hover:bg-[#B84200] text-white rounded-lg font-bold transition-all duration-200 text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] ${saving ? "opacity-60 cursor-not-allowed" : ""}`}
             disabled={saving}
           >
             {saving ? "Saving..." : "Save Changes"}

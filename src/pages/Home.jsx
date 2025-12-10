@@ -103,150 +103,152 @@ const TESTIMONIALS = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-cyan-100 to-violet-200">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-r from-sky-600 via-cyan-600 to-blue-700 py-10 px-2 sm:px-4 md:px-0">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <section className="w-full bg-gradient-to-r from-hospital-blue via-[#8BB8CE] to-hospital-blue py-12 sm:py-16 px-2 sm:px-4 md:px-0 shadow-lg">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex-1 w-full">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4">
-              Find and Book the <span className="text-teal-200">Best Doctors</span> near you
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight">
+              Find and Book the <span className="text-hospital-cream">Best Doctors</span> near you
             </h1>
-            <p className="text-base sm:text-lg text-blue-100 mb-6">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 font-medium">
               25K+ doctors | 100+ specialties | 24/7 support
             </p>
             <div className="flex flex-col md:flex-row gap-3 mb-6">
               <input
                 type="text"
                 placeholder="City or Area"
-                className="rounded-lg px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-400 w-full md:w-auto"
+                className="rounded-lg px-4 py-3 border-2 border-white/30 bg-white/90 focus:outline-none focus:ring-2 focus:ring-hospital-cream focus:border-hospital-cream w-full md:w-auto text-gray-800 placeholder-gray-500"
                 style={{ minWidth: 0 }}
               />
               <input
                 type="text"
                 placeholder="Doctors, Hospital, Conditions"
-                className="rounded-lg px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-400 flex-1 w-full md:w-auto"
+                className="rounded-lg px-4 py-3 border-2 border-white/30 bg-white/90 focus:outline-none focus:ring-2 focus:ring-hospital-cream focus:border-hospital-cream flex-1 w-full md:w-auto text-gray-800 placeholder-gray-500"
               />
-              <button className="bg-teal-500 hover:bg-teal-600 text-white font-bold px-6 py-3 rounded-lg shadow transition w-full md:w-auto">
+              <button className="bg-hospital-orange hover:bg-[#B84200] text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 w-full md:w-auto">
                 Search
               </button>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/specialties" className="px-5 py-3 bg-white text-teal-700 rounded-lg font-semibold shadow hover:bg-teal-50 transition border border-teal-200 w-full sm:w-auto text-center">Browse Doctors</Link>
-              <Link to="/emergency" className="px-5 py-3 bg-red-600 text-white rounded-lg font-semibold shadow hover:bg-red-700 transition w-full sm:w-auto text-center">Emergency Help</Link>
+              <Link to="/specialties" className="px-6 py-3 bg-white text-hospital-blue rounded-lg font-bold shadow-lg hover:bg-hospital-cream transition-all duration-200 border-2 border-white/50 w-full sm:w-auto text-center transform hover:scale-105">Browse Doctors</Link>
+              <Link to="/emergency" className="px-6 py-3 bg-hospital-orange text-white rounded-lg font-bold shadow-lg hover:bg-[#B84200] transition-all duration-200 w-full sm:w-auto text-center transform hover:scale-105 animate-pulse">Emergency Help</Link>
             </div>
             <div className="mt-8 text-center">
               <QuoteRotator
                 quotes={QUOTES}
                 interval={4000}
-                className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-900 via-cyan-900 to-teal-900 bg-clip-text text-transparent drop-shadow-md"
+                className="text-xl sm:text-2xl md:text-3xl font-bold text-white drop-shadow-lg"
               />
             </div>  
           </div>
-          <div className="flex-1 flex justify-center mt-8 md:mt-0 w-full">
+          <div className="flex-1 flex justify-center items-center mt-8 md:mt-0 w-full">
             <img
-              src="https://www.shutterstock.com/image-vector/male-doctor-smiling-happy-face-600nw-2481032615.jpg"
+              src="https://cdn.prod.website-files.com/66bd394eedeb9d6ee29898c6/682f5450a046c241920c1e6f_Three%20doctors%20standing%20side%20by%20side%2C%20crossing%20their%20arms.jpg"
               alt="Doctor"
-              className="rounded-2xl shadow-2xl w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 object-cover border-4 border-white"
+              className="rounded-2xl shadow-2xl w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-cover border-4 border-white"
             />
           </div>
         </div>
       </section>
 
       {/* Services Cards */}
-      <section className="max-w-6xl mx-auto mt-12 z-10 relative px-2 sm:px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <section className="max-w-7xl mx-auto mt-12 sm:mt-16 z-10 relative px-2 sm:px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
           {SERVICES.map((s, idx) => (
             <div
               key={idx}
-              className={`rounded-2xl shadow-xl p-6 flex flex-col items-center justify-center text-center 
-              bg-gradient-to-br ${s.color} text-white transform transition duration-300 hover:scale-105`}
+              className="rounded-2xl shadow-xl p-6 flex flex-col items-center justify-center text-center 
+              bg-white border-2 border-hospital-blue/20 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-hospital-orange"
             >
               {/* Icon */}
-              <div className="text-5xl mb-4">{s.icon}</div>
+              <div className="text-5xl mb-4 text-hospital-blue">{s.icon}</div>
               {/* Title */}
-              <div className="font-bold text-lg sm:text-xl mb-2">{s.title}</div>
+              <div className="font-bold text-base sm:text-lg mb-2 text-gray-800">{s.title}</div>
               {/* Description */}
-              <div className="text-sm text-blue-50 leading-relaxed">{s.desc}</div>
+              <div className="text-sm text-gray-600 leading-relaxed">{s.desc}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Specialties */}
-      <section className="max-w-6xl mx-auto mt-16 px-2 sm:px-4">
-        <div className="flex flex-col sm:flex-row items-center justify-between mb-4 gap-2">
-          <h2 className="text-xl sm:text-2xl font-bold text-teal-700">Consult best doctors online</h2>
-          <Link to="/specialties" className="text-teal-600 font-semibold hover:underline">View All</Link>
+      <section className="max-w-7xl mx-auto mt-16 sm:mt-20 px-2 sm:px-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between mb-6 gap-2">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-hospital-blue">Consult Best Doctors Online</h2>
+          <Link to="/specialties" className="text-hospital-orange font-bold hover:text-[#B84200] transition-colors text-sm sm:text-base">View All →</Link>
         </div>
         <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-4 sm:gap-6">
           {SPECIALTIES.map((s, idx) => (
-            <div key={idx} className="flex flex-col items-center bg-white rounded-xl shadow p-3 sm:p-4 hover:shadow-xl transition">
-              <div className="text-3xl sm:text-4xl mb-2">{s.icon}</div>
-              <div className="font-medium text-gray-700 text-center text-xs sm:text-base">{s.name}</div>
+            <div key={idx} className="flex flex-col items-center bg-white rounded-xl shadow-lg border-2 border-hospital-blue/10 p-4 sm:p-5 hover:shadow-2xl hover:border-hospital-orange transition-all duration-300 transform hover:scale-105">
+              <div className="text-3xl sm:text-4xl mb-3">{s.icon}</div>
+              <div className="font-semibold text-gray-800 text-center text-xs sm:text-sm">{s.name}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Search by Condition */}
-      <section className="max-w-6xl mx-auto mt-12 px-2 sm:px-4">
-        <div className="flex flex-col sm:flex-row items-center justify-between mb-4 gap-2">
-          <h2 className="text-xl sm:text-2xl font-bold text-teal-700">Search doctor by condition</h2>
-          <Link to="/conditions" className="text-teal-600 font-semibold hover:underline">View All</Link>
+      <section className="max-w-7xl mx-auto mt-12 sm:mt-16 px-2 sm:px-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between mb-6 gap-2">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-hospital-blue">Search Doctor by Condition</h2>
+          <Link to="/conditions" className="text-hospital-orange font-bold hover:text-[#B84200] transition-colors text-sm sm:text-base">View All →</Link>
         </div>
         <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-4 sm:gap-6">
           {CONDITIONS.map((c, idx) => (
-            <div key={idx} className="flex flex-col items-center bg-white rounded-xl shadow p-3 sm:p-4 hover:shadow-xl transition">
-              <div className="text-3xl sm:text-4xl mb-2">{c.icon}</div>
-              <div className="font-medium text-gray-700 text-center text-xs sm:text-base">{c.name}</div>
+            <div key={idx} className="flex flex-col items-center bg-white rounded-xl shadow-lg border-2 border-hospital-blue/10 p-4 sm:p-5 hover:shadow-2xl hover:border-hospital-gold transition-all duration-300 transform hover:scale-105">
+              <div className="text-3xl sm:text-4xl mb-3">{c.icon}</div>
+              <div className="font-semibold text-gray-800 text-center text-xs sm:text-sm">{c.name}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="max-w-6xl mx-auto mt-16 px-2 sm:px-4">
-        <h2 className="text-xl sm:text-2xl font-bold text-center text-teal-700 mb-6">How It Works</h2>
-        <div className="flex flex-col md:flex-row gap-8 justify-center">
-          <div className="flex-1 flex flex-col items-center text-center mb-8 md:mb-0">
-            <div className="text-4xl sm:text-5xl mb-4 text-teal-600"><FaSearch /></div>
-            <h4 className="font-semibold">Search & Select</h4>
-            <p className="text-gray-600 text-sm sm:text-base">Find the right doctor or specialist based on your needs.</p>
+      <section className="max-w-7xl mx-auto mt-16 sm:mt-20 px-2 sm:px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-hospital-blue mb-8 sm:mb-12">How It Works</h2>
+        <div className="flex flex-col md:flex-row gap-8 lg:gap-12 justify-center">
+          <div className="flex-1 flex flex-col items-center text-center mb-8 md:mb-0 bg-white rounded-2xl p-6 sm:p-8 shadow-lg border-2 border-hospital-blue/10 hover:border-hospital-orange transition-all duration-300">
+            <div className="text-5xl sm:text-6xl mb-4 text-hospital-blue bg-hospital-cream rounded-full p-4"><FaSearch /></div>
+            <h4 className="font-bold text-lg sm:text-xl mb-2 text-gray-800">Search & Select</h4>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Find the right doctor or specialist based on your needs.</p>
           </div>
-          <div className="flex-1 flex flex-col items-center text-center mb-8 md:mb-0">
-            <div className="text-4xl sm:text-5xl mb-4 text-teal-600"><FaCalendarCheck /></div>
-            <h4 className="font-semibold">Book Appointment</h4>
-            <p className="text-gray-600 text-sm sm:text-base">Choose a convenient time for a video or in-person consultation.</p>
+          <div className="flex-1 flex flex-col items-center text-center mb-8 md:mb-0 bg-white rounded-2xl p-6 sm:p-8 shadow-lg border-2 border-hospital-blue/10 hover:border-hospital-orange transition-all duration-300">
+            <div className="text-5xl sm:text-6xl mb-4 text-hospital-blue bg-hospital-cream rounded-full p-4"><FaCalendarCheck /></div>
+            <h4 className="font-bold text-lg sm:text-xl mb-2 text-gray-800">Book Appointment</h4>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Choose a convenient time for a video or in-person consultation.</p>
           </div>
-          <div className="flex-1 flex flex-col items-center text-center">
-            <div className="text-4xl sm:text-5xl mb-4 text-teal-600"><FaComments /></div>
-            <h4 className="font-semibold">Consult & Receive Care</h4>
-            <p className="text-gray-600 text-sm sm:text-base">Connect with your doctor, discuss your symptoms, and get a digital prescription.</p>
+          <div className="flex-1 flex flex-col items-center text-center bg-white rounded-2xl p-6 sm:p-8 shadow-lg border-2 border-hospital-blue/10 hover:border-hospital-orange transition-all duration-300">
+            <div className="text-5xl sm:text-6xl mb-4 text-hospital-blue bg-hospital-cream rounded-full p-4"><FaComments /></div>
+            <h4 className="font-bold text-lg sm:text-xl mb-2 text-gray-800">Consult & Receive Care</h4>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Connect with your doctor, discuss your symptoms, and get a digital prescription.</p>
           </div>
         </div>
       </section>
 
       {/* Demo Video */}
-      <section className="max-w-3xl mx-auto mt-16 text-center px-2 sm:px-4">
-        <h3 className="font-semibold mb-2 text-base sm:text-lg text-teal-700">Watch Our Demo</h3>
-        <video
-          controls
-          className="mx-auto rounded shadow-lg border-4 border-teal-100 w-full max-w-2xl"
-        >
-          <source src={docksVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <section className="max-w-4xl mx-auto mt-16 sm:mt-20 text-center px-2 sm:px-4">
+        <h3 className="font-extrabold mb-4 text-xl sm:text-2xl md:text-3xl text-hospital-blue">Watch Our Demo</h3>
+        <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 border-2 border-hospital-blue/20">
+          <video
+            controls
+            className="mx-auto rounded-xl shadow-lg w-full max-w-3xl"
+          >
+            <source src={docksVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </section>
 
       {/* Testimonials */}
-      <section className="max-w-6xl mx-auto mt-16 mb-12 px-2 sm:px-4">
-        <h2 className="text-xl sm:text-2xl font-bold text-center text-teal-700 mb-6">What Our Users Say</h2>
-        <div className="flex flex-col md:flex-row gap-8 justify-center">
+      <section className="max-w-7xl mx-auto mt-16 sm:mt-20 mb-12 sm:mb-16 px-2 sm:px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-hospital-blue mb-8 sm:mb-12">What Our Users Say</h2>
+        <div className="flex flex-col md:flex-row gap-6 lg:gap-8 justify-center">
           {TESTIMONIALS.map((t, idx) => (
-            <div key={idx} className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center max-w-xs mx-auto border-t-4 border-teal-400 w-full">
-              <img src={t.avatar} alt={t.name} className="w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-3 border-2 border-teal-200" />
-              <p className="text-gray-700 italic text-center text-sm sm:text-base">"{t.text}"</p>
-              <div className="mt-2 font-semibold text-teal-800">{t.name}</div>
+            <div key={idx} className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 flex flex-col items-center max-w-sm mx-auto border-t-4 border-hospital-orange w-full transform hover:scale-105 transition-all duration-300">
+              <img src={t.avatar} alt={t.name} className="w-16 h-16 sm:w-20 sm:h-20 rounded-full mb-4 border-4 border-hospital-blue shadow-lg" />
+              <p className="text-gray-700 italic text-center text-sm sm:text-base leading-relaxed mb-4">"{t.text}"</p>
+              <div className="mt-auto font-bold text-hospital-blue text-base sm:text-lg">{t.name}</div>
             </div>
           ))}
         </div>
